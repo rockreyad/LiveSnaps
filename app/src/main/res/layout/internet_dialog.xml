@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0222"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:src="@drawable/no_internet" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Ooops!"
+        android:textColor="#FFF"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/nettext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="No Internet Connection found"
+        android:textColor="#FFF"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="TURN ON YOUR DATA AND HIT RESTART"
+        android:textColor="#FFF"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/restartapp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/holo_green_light"
+        android:textAllCaps="true"
+        android:text="Restart"
+        android:textSize="20sp" />
+
+</LinearLayout>

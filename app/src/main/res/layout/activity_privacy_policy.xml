@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#73BFAF"
+    tools:context=".PrivacyPolicy">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/leftarrow" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:text="Privacy Policy"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/background_white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Terms of Service"
+            android:textColor="#433B42"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control."
+            android:textColor="#757475"
+            android:textSize="15dp" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="500dp"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#7C70ECFA"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="1.Terms"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="By accessing Livesnap, you are agreeing to be
+bound by these app Terms and Conditions of Use, all applicable laws and
+regulations, and agree that you are responsible for compliance with any
+applicable local laws, if you do not agree with any of these terms, you are
+prohibited from using or accessing Livesnap.The materials contained in Livesnap
+are protected by applicable copyright and trade mark law."
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="2.License"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Purchased license is valid for single user only.Illegally using Livesnap without
+a valid license can be permanently terminated your account without any notice."
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="3.Your Infromation"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="We Collect information you provide, Browsing, Device ID, and Device Models you use to access Livesnap to
+verify your identity and prevent fraud or other unauthorized or illegal activity
+We may share information, but we won't sell it to advertisers or third parties. "
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="4.Camera and Photos"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Our services require us to collect images and other information from your device’s camera and photos.
+For example, you won’t be able to send Snaps or upload photos from gallery unless we can access your camera or photos."
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="5.Children"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Our services are not intended for anyone under 13."
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="6.Illegal Use"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Illegal activity will not be tolerated on Livesnap. This may result in being banned from our app."
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="7.Nudity/Sexual Content"
+                    android:textColor="#1C1C1C"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="We do not tolerate any sexually explicit content. This includes content in the photo, and video.Please don't post everywhere else"
+                    android:textColor="#757475"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="We may change this Privacy Policy from time to time.
+But when we do, we’ll let you know one way or another. "
+                    android:textColor="#232323"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

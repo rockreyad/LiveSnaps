@@ -1,1 +1,3 @@
-include ':creative-sample-app'
+include ':recorder'
+include ':app'
+rootProject.name = "Livesnap"

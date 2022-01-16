@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "755829107440",
+    "firebase_url": "https://livesnap-app-default-rtdb.firebaseio.com",
+    "project_id": "livesnap-app",
+    "storage_bucket": "livesnap-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755829107440:android:0be6e65ff0c4a871a2b035",
+        "android_client_info": {
+          "package_name": "dev.narc.livesnap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755829107440-4o4fcvsdp6716rnv3mu2infem1r4cttg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkM7VZEXrSiuESCrnE0gtGE1W-XhKdoRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755829107440-4o4fcvsdp6716rnv3mu2infem1r4cttg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TheGlowingLoader">
+        <attr name="theglowingloader_line_1_color" format="reference" />
+        <attr name="theglowingloader_line_2_color" format="reference" />
+        <attr name="theglowingloader_line_stroke_width" format="integer" />
+        <attr name="theglowingloader_ripple_color" format="reference" />
+        <attr name="theglowingloader_particle_1_color" format="reference" />
+        <attr name="theglowingloader_particle_2_color" format="reference" />
+        <attr name="theglowingloader_particle_3_color" format="reference" />
+        <attr name="theglowingloader_disable_shadows" format="boolean" />
+        <attr name="theglowingloader_disable_ripple" format="boolean" />
+        <attr name="theglowingloader_shadow_opacity" format="float" />
+    </declare-styleable>
+</resources>

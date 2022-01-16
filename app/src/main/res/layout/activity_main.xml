@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0222"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainlinear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@+id/mainlinear">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txthello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello !"
+                    android:textColor="#C1C1C1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtusername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txthello"
+                    android:text="Loading..."
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+<!--            points-->
+            <LinearLayout
+                android:id="@+id/pointsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:onClick="pointsBuy"
+                android:visibility="gone"
+                android:background="@drawable/background_green"
+                android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/coin"/>
+
+                <TextView
+                    android:id="@+id/pointsResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txthello"
+                    android:layout_marginRight="5dp"
+                    android:text="0000"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+<!--        Dashboard-->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/toolsBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="5dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:text="Dashboard" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="profileBtn"
+                        android:src="@drawable/myprofilebtnbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView5">
+
+                        <ImageView
+                            android:id="@+id/boyic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/boy" />
+
+                        <TextView
+                            android:id="@+id/profiletxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My Profile"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="updateProfileBtn"
+                        android:src="@drawable/editprofilebtnbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView6">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/edit" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Edit Profile"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="passupdate"
+                        android:src="@drawable/paswordbtnbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView7">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/password" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Security"
+                            android:textStyle="bold"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="unLinkDevice"
+                        android:src="@drawable/devicebtnbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView8">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/device" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Device"
+                            android:textStyle="bold"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="support"
+                        android:src="@drawable/supportbtnbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView9">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/support" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Support"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="aboutApp"
+                        android:src="@drawable/aboutbtnbg"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView10">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/information" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="About"
+                            android:textStyle="bold"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </TableRow>
+
+        </TableLayout>
+
+<!--        Tools-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolsBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tools"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Tools"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+
+                <!--                    cardlist-->
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="120dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/background_card"
+                    android:onClick="snaptool"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentStart="true"
+                            android:src="@drawable/snapchat" />
+
+                        <TextView
+                            android:id="@+id/snaptool"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:text="Snap"
+                            android:textAllCaps="true"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/snaptool"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="5dp"
+                            android:text="Send photos &amp; videos from gallery"
+                            android:textColor="#CDCDCD"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/snapUserName"
+                        android:layout_width="120dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_card2"
+                        android:visibility="gone"
+                        android:onClick="snapUser"
+                        android:padding="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/snapuser" />
+
+                            <TextView
+                                android:id="@+id/snapUser"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Snap UserName"
+                                android:textAllCaps="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Connect your snap account."
+                                android:textColor="#CDCDCD"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+<!--                    Only Viewable who have SnapPro Plan-->
+                    <LinearLayout
+                        android:id="@+id/linearLayout5"
+                        android:layout_width="120dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_card3"
+                        android:visibility="visible"
+                        android:onClick="managerAccess"
+                        android:padding="10dp"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentStart="true"
+                                android:src="@drawable/manager" />
+
+                            <TextView
+                                android:id="@+id/manager"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="10dp"
+                                android:text="Manager"
+                                android:textAllCaps="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/snaptool"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginRight="5dp"
+                                android:text="Manage all user data"
+                                android:textColor="#CDCDCD"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="120dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                    android:onClick="newFeatures"
+                    android:background="@drawable/background_card4"
+                    app:layout_constraintBottom_toTopOf="@+id/signOutBtn">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentStart="true"
+                            android:src="@drawable/more" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:text="More features..."
+                            android:textAllCaps="true"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                </LinearLayout>
+                </HorizontalScrollView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/signOutBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/redbtn"
+                        android:text="Sign Out"
+                        android:textColor="#ffff" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <dev.narc.livesnap.TheGlowingLoader
+            android:id="@+id/loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B51E1E1E"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

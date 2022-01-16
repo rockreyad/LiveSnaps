@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0222"
+    tools:context=".ProfileActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/leftarrow"
+            android:backgroundTint="@color/white"/>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/userimg"
+            android:layout_marginLeft="130dp"/>
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On "
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/userPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+<!--    upgrade plan-->
+    <LinearLayout
+        android:id="@+id/upgradeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/background_green"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upgrade Your Subscription"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buy some coin to continue send snaps. "
+                android:textSize="12sp"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--    Snap Statistic plan-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:visibility="gone"
+        android:background="@drawable/background_card6"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistics"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/uselivesnap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0000"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="times use livesnap to send snaps."
+                android:textSize="12sp"
+                android:textColor="#B1B1B1" />
+        </LinearLayout>
+    </LinearLayout>
+<!--    profile data-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:background="@drawable/background_card7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--                leftSide Coloumn-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
+
+<!--                    Email-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="#A8A7A7"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:id="@+id/userEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+<!--                    Phone-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#A8A7A7"
+                            android:text="phone"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:id="@+id/userPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                    <!--                    Address-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#A8A7A7"
+                            android:text="Address"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:id="@+id/userAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!--                RightSide Coloumn-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#A8A7A7"
+                            android:text="Authorize"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:id="@+id/userAuthorize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#A8A7A7"
+                            android:text="Manager"
+                            android:textSize="16sp"/>
+                        <TextView
+                            android:id="@+id/userManager"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

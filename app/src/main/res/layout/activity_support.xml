@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9DCCCC"
+    tools:context=".SupportActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginEnd="20dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/leftarrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reach The Support Team"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="3dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
+</RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/operator"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/livechatBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/livechatBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/supportbgbtn"
+        android:drawableRight="@drawable/rightarrow"
+        android:text="Contact Live Chat"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/socialMore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/socialMore"
+       android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transparent_white"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/supportEmailbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="More..."
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:weightSum="100"
+                android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_weight="33.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/telegramBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="20dp"
+                android:background="@drawable/telegram" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Telegram"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="33.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/discordBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="20dp"
+                android:background="@drawable/discord" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Discord"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="33.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/skypeBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="20dp"
+                android:background="@drawable/skype"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Skype"/>
+        </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/supportEmailbtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:onClick="openEmail"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/emailicon" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Send us a email"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="rockreyad@gmail.com"
+        android:textIsSelectable="true"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

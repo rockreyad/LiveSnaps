@@ -1,0 +1,169 @@
+package dev.narc.livesnap;
+
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+
+public class UnlinkDevice extends AppCompatActivity {
+
+    String tempDeviceId;
+    String deviceName;
+    Button removeDevice,backBtn;
+    TextView displayDevice;
+    private FirebaseAuth mAuth;
+    private FirebaseUser firebaseUser;
+    private FirebaseDatabase database;
+    private DatabaseReference mRef;
+
+    dev.narc.livesnap.TheGlowingLoader loaderAnimation;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_unlink_device);
+
+        tempDeviceId = Settings.Secure.getString(getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+
+        mAuth = FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
+
+        backBtn = findViewById(R.id.backBtn);
+        removeDevice = findViewById(R.id.removeDevice);
+        displayDevice = findViewById(R.id.deviceName);
+        deviceName = Build.MANUFACTURER + " - " + Build.MODEL;
+
+        loaderAnimation = findViewById(R.id.loader);
+
+        readUserdata();
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UnlinkDevice.this,MainActivity.class));
+            }
+        });
+        removeDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unLinkedDevice();
+                toSign();
+            }
+        });
+    }
+
+    private void readUserdata() {
+        database = FirebaseDatabase.getInstance();
+        mRef = database.getReference("Users");
+
+        Query query = mRef.orderByChild("email").equalTo(firebaseUser.getEmail());
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //Check untill required data get
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    //get verify data
+                    //Update the UI for verified user
+                    String DeviceName = "" + dataSnapshot.child("DeviceName").getValue();
+                    displayDevice.setText(DeviceName);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+        //Check there is user or not
+        validationUser();
+    }
+
+    private void validationUser() {
+
+        if (firebaseUser != null) {
+
+
+        } else if (firebaseUser == null) {
+
+            //TODO Progress Dialog
+            finish();
+            toSign();
+            return;
+        }
+
+    }
+
+
+    private void unLinkedDevice() {
+        loaderAnimation.setVisibility(View.VISIBLE);
+        database = FirebaseDatabase.getInstance();
+        mRef = database.getReference("Users");
+
+        Query query = mRef.orderByChild("email").equalTo(firebaseUser.getEmail());
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //Check untill required data get
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    //get verify data
+                    //Update the UI for verified user
+                    String random = "unlinkedDevice";
+                    HashMap<String, Object> result = new HashMap<>();
+                    result.put("LoginDeviceId", random);
+                    mRef.child(firebaseUser.getUid()).updateChildren(result);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void toSign() {
+        //Change the UI
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAuth.signOut();
+                final Intent mainIntent = new Intent(UnlinkDevice.this, SignActivity.class);
+                UnlinkDevice.this.startActivity(mainIntent);
+                loaderAnimation.setVisibility(View.GONE);
+                UnlinkDevice.this.finish();
+            }
+        }, 3 * 1000);
+
+    }
+}
